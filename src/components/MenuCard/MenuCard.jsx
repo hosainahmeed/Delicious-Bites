@@ -18,7 +18,7 @@ const MenuCard = ({ item }) => {
     // console.log(item);
     if (user && user.email) {
       const cartItem = {menuId:_id,name,image,price,email:user.email}
-      fetch("https://rainbow-feast-restaurant-server.vercel.app/carts",{
+      fetch("https://bistro-boss-server-nv3pn771r-hosains-projects-1e2169e4.vercel.app/carts",{
         method:"POST",
         headers:{'content-type':'application/json'},
         body:JSON.stringify(cartItem)

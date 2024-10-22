@@ -1,35 +1,38 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import img1 from "../../../assets/home/01.jpg";
-import img2 from "../../../assets/home/02.jpg";
-import img3 from "../../../assets/home/03.jpg";
-import img4 from "../../../assets/home/04.jpg";
-import img5 from "../../../assets/home/05.jpg";
-import img6 from "../../../assets/home/06.jpg";
+import image1 from "../../../assets/home/01.jpg";
+import image2 from "../../../assets/home/02.jpg";
+import image3 from "../../../assets/home/03.jpg";
+import image4 from "../../../assets/home/04.jpg";
+import image5 from "../../../assets/home/05.jpg";
+import image6 from "../../../assets/home/06.jpg";
 
-const Banner = () => {
+
+function Banner() {
   return (
-    <Carousel autoPlay={true} interval={3000} infiniteLoop={true} transitionTime={1000} className="text-center">
-      <div>
-        <img src={img1} />
-      </div>
-      <div>
-        <img src={img2} />
-      </div>
-      <div>
-        <img src={img3} />F
-      </div>
-      <div>
-        <img src={img4} />F
-      </div>
-      <div>
-        <img src={img5} />F
-      </div>
-      <div>
-        <img src={img6} />F
-      </div>
-    </Carousel>
+    <div>
+      <Carousel autoPlay={true} infiniteLoop interval={3000} centerMode={true}>
+        <div>
+          <img src={image1} alt="Banner 1" />
+        </div>
+        <div>
+          <img src={image2} alt="Banner 2" />
+        </div>
+        <div>
+          <img src={image3} alt="Banner 3" />
+        </div>
+        <div>
+          <img src={image4} alt="Banner 4" />
+        </div>
+        <div>
+          <img src={image5} alt="Banner 5" />
+        </div>
+        <div>
+          <img src={image6} alt="Banner 6" />
+        </div>
+      </Carousel>
+    </div>
   );
-};
+}
 
 export default Banner;

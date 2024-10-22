@@ -32,7 +32,7 @@ const Order = () => {
   return (
     <div>
       <Helmet>
-        <title>RainbowFeast-OrderFood</title>
+        <title>Delicious Bites-OrderFood</title>
       </Helmet>
       <div className="mb-16">
         <Cover

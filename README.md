@@ -1,2 +1,2 @@
 - ## Live link
-- Hosted in Firebase => [RainbowFeast Restaurant](https://rainbow-feast-restaurent.web.app/)
+- Hosted in Firebase => [Bistro_Boss Restaurant](https://rainbow-feast-restaurent.web.app/)

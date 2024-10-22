@@ -6,7 +6,7 @@ import MenuCard from "../../../components/MenuCard/MenuCard";
 const ChefRecommends = () => {
     const [menu,setMenu] = useState([]);
     useEffect(()=>{
-        fetch('menu.json')
+        fetch('https://bistro-boss-server-nv3pn771r-hosains-projects-1e2169e4.vercel.app/menu')
         .then(res=>res.json())
         .then(data=>setMenu(data))
     },[])

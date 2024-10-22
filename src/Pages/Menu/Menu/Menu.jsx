@@ -1,52 +1,85 @@
 import { Helmet } from "react-helmet-async";
 import Cover from "../../Shared/Cover/Cover";
-import menuBg from '../../../assets/menu/banner3.jpg'
-import desertBg from '../../../assets/menu/dessert-bg.jpeg'
-import pizzaBg from '../../../assets/menu/pizza-bg.jpg'
-import saladBg from '../../../assets/menu/salad-bg.jpg'
-import soupBg from '../../../assets/menu/soup-bg.jpg'
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import useMenu from "../../../Hooks/UseMenu";
 import MenuCategory from "../MenuCategory/MenuCategory";
+
+// Importing background images dynamically
+import menuBg from "../../../assets/menu/banner3.jpg";
+import desertBg from "../../../assets/menu/dessert-bg.jpeg";
+import pizzaBg from "../../../assets/menu/pizza-bg.jpg";
+import saladBg from "../../../assets/menu/salad-bg.jpg";
+import soupBg from "../../../assets/menu/soup-bg.jpg";
 import LoadingSpiner from "../../../components/LoadingSpiner/LoadingSpiner";
 
-
-
 const Menu = () => {
-    const [menu,menuLoading] = useMenu();
-    // const popularMenu = menu.filter(item=> item.category === 'popular');
-    const dessertMenu = menu.filter(item=> item.category === 'dessert');
-    const saladMenu = menu.filter(item=> item.category === 'salad');
-    const offeredMenu = menu.filter(item=> item.category === 'offered');
-    // const drinksMenu = menu.filter(item=> item.category === 'drinks');
-    const soupMenu = menu.filter(item=> item.category === 'soup');
-    const pizzaMenu = menu.filter(item=> item.category === 'pizza');
+  const [menu, menuLoading] = useMenu();
 
+  const categories = [
+    {
+      title: "offered",
+      bgImg: menuBg,
+      description: "Explore today’s special dishes crafted just for you.",
+    },
+    {
+      title: "dessert",
+      bgImg: desertBg,
+      description: "Indulge in sweet treats and classic desserts.",
+    },
+    {
+      title: "pizza",
+      bgImg: pizzaBg,
+      description: "Try our delicious range of freshly baked pizzas.",
+    },
+    {
+      title: "salad",
+      bgImg: saladBg,
+      description: "Enjoy a healthy selection of fresh and vibrant salads.",
+    },
+    {
+      title: "soup",
+      bgImg: soupBg,
+      description: "Warm yourself with our hearty and flavorful soups.",
+    },
+  ];
 
+  if (menuLoading) {
+    return <LoadingSpiner></LoadingSpiner>;
+  }
 
-    if(menuLoading){
-      return <LoadingSpiner/>
-    }
+  // Dynamically filtering menu items for each category
+  const filteredMenu = (category) =>
+    menu.filter((item) => item.category === category);
+
   return (
     <div>
       <Helmet>
-        <title>RainbowFeast-Menu</title>
+        <title>Delicious Bites- Menu</title>
       </Helmet>
-      {/* main cover */}
-      <Cover coverImg={menuBg} title={'Our Menu'} paragraph={'WOULD YOU LIKE TO TRY A DISH?'}></Cover>
-      <SectionTitle subHeading={"Don't Miss"} heading={"TODAY'S OFFER"}></SectionTitle>
-      {/* offered menu items */}
-      <MenuCategory title={'offered'} items={offeredMenu}></MenuCategory>
-      {/* desert menu items */}
-      <MenuCategory coverImg={desertBg} items={dessertMenu} title={'desert'} paragraph={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley '} ></MenuCategory>
-      {/* pizza menu items */}
-      <MenuCategory coverImg={pizzaBg} items={pizzaMenu} title={'pizza'} paragraph={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. '} ></MenuCategory>
-      {/* salad menu items */}
-      <MenuCategory coverImg={saladBg} items={saladMenu} title={'salad'} paragraph={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. '} ></MenuCategory>
-      {/* soup menu items */}
-      <MenuCategory coverImg={soupBg} items={soupMenu} title={'soup'} paragraph={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. '} ></MenuCategory>
+
+      {/* Main cover */}
+      <Cover
+        coverImg={menuBg}
+        title={"Our Menu"}
+        paragraph={"WOULD YOU LIKE TO TRY A DISH?"}
+      />
+
+      <SectionTitle subHeading={"Don't Miss"} heading={"TODAY'S OFFER"} />
+
+      {/* Dynamic rendering of categories */}
+      {categories.map(({ title, bgImg, description }) => (
+        <MenuCategory
+          key={title}
+          coverImg={bgImg}
+          items={filteredMenu(title)}
+          title={title}
+          paragraph={description}
+        />
+      ))}
     </div>
   );
 };
 
 export default Menu;
+
+

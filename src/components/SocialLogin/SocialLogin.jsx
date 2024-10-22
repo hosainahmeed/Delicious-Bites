@@ -20,7 +20,7 @@ const SocialLogin = () => {
         role:'user',
         photoURL:loggedInUser.photoURL
       };
-      fetch("https://rainbow-feast-restaurant-server.vercel.app/users", {
+      fetch("https://bistro-boss-server-nv3pn771r-hosains-projects-1e2169e4.vercel.app/users", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(savedUser),

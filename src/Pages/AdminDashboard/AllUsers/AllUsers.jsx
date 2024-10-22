@@ -14,7 +14,7 @@ const AllUsers = () => {
 
   // handle make admin 
   const handleMakeAdmin = user =>{
-    fetch(`https://rainbow-feast-restaurant-server.vercel.app/users/admin/${user._id}`,{
+    fetch(`https://bistro-boss-server-nv3pn771r-hosains-projects-1e2169e4.vercel.app/users/admin/${user._id}`,{
       method:'PATCH'
     })
     .then(res=>res.json())
@@ -39,7 +39,7 @@ const AllUsers = () => {
   return (
     <div>
       <Helmet>
-        <title>RainbowFeast-All Users</title>
+        <title>Delicious Bites-All Users</title>
       </Helmet>
       <SectionTitle
         subHeading={"---How many??---"}

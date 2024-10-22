@@ -83,7 +83,7 @@ const Login = () => {
   return (
     <div>
       <Helmet>
-        <title>RainbowFeast-Login</title>
+        <title>Delicious Bites-Login</title>
       </Helmet>
       <div className="hero h-[700px] bg-base-200 mt-20 shadow-lg">
         <div className="hero-content flex flex-col lg:flex-row">
@@ -145,7 +145,7 @@ const Login = () => {
               {/* TODO: make  button disable with captcha condition */}
               <div className="form-control mt-6">
                 <input
-                  disabled={disabled}
+                  // disabled={disabled}
                   className={disabled === true? ' bg-orange-200 py-3 font-bold  text-white':"bg-[#D1A054] py-3 font-bold cursor-pointer text-white"}
                   type="submit"
                   value="Submit"

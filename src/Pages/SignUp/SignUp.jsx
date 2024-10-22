@@ -50,7 +50,7 @@ const SignUp = () => {
                 role: "user",
                 photoURL: imgURL,
               };
-              fetch("https://rainbow-feast-restaurant-server.vercel.app/users", {
+              fetch("https://bistro-boss-server-nv3pn771r-hosains-projects-1e2169e4.vercel.app/users", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify(savedUser),
@@ -86,7 +86,7 @@ const SignUp = () => {
   return (
     <>
       <Helmet>
-        <title>RainbowFeast-SignUp</title>
+        <title>Delicious Bites-SignUp</title>
       </Helmet>
       <div className="hero h-[700px] bg-base-200 mt-20 shadow-lg">
         <div className="hero-content flex flex-col lg:flex-row">
