@@ -1,5 +1,5 @@
 import MenuItem from "../../../Home/Home/Shared/MenuItem/MenuItem";
-import ItemShocase from "../../../Home/Home/Shared/Chef-Show/ItemShocase";
+import ItemShocase from "../../../Home/Home/Shared/Chef-Show/ItemShocase.jsx";
 import { Link } from "react-router-dom";
 import AddToCart from "../../../components/Buttons/AddtoCart/AddToCart";
 

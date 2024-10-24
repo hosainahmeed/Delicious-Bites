@@ -62,7 +62,7 @@ const AuthProvider = ({ children }) => {
       console.log(currentUser);
       if (currentUser && currentUser.email) {
         axios
-          .post("https://bistro-boss-server-nv3pn771r-hosains-projects-1e2169e4.vercel.app/jwt", {
+          .post("http://localhost:5000/jwt", {
             email: currentUser.email,
           })
           .then((data) => {

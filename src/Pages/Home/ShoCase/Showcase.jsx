@@ -6,6 +6,8 @@
 //         backgroundRepeat: 'no-repeat',
 //     };
 
+import ItmShow from "../../../Layout/ItemShowcase/ItmShow";
+
 //     const containerStyle = {
 //         backgroundColor: 'rgba(255, 255, 255, 0.9)',
 //         textAlign: 'center',
@@ -61,7 +63,6 @@
 // export default Showcase;
 
 
-import ItmShow from "../../../../../Layout/ItemShowcase/ItmShow.jsx";
 
 function Showcase({ bgImage, title }) {
   const backgroundImageStyle = {

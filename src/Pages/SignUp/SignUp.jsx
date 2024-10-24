@@ -50,7 +50,7 @@ const SignUp = () => {
                 role: "user",
                 photoURL: imgURL,
               };
-              fetch("https://bistro-boss-server-nv3pn771r-hosains-projects-1e2169e4.vercel.app/users", {
+              fetch("http://localhost:5000/users", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify(savedUser),

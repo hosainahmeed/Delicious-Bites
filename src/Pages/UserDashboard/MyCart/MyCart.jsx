@@ -21,7 +21,7 @@ const MyCart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://bistro-boss-server-nv3pn771r-hosains-projects-1e2169e4.vercel.app/carts/${item._id}`,{
+        fetch(`http://localhost:5000/carts/${item._id}`,{
             method:"DELETE"
 
         })
